@@ -62,10 +62,10 @@ function imprimirPalabra(palabra, cant){
     for(i=0; i < cant; i++){
         console.log(palabra);
 }
+
 }
 
 imprimirPalabra("Messi", 10);
-
 
 
 //6 - Crear una función que reciba un array por parámetro e imprima por consola todos los valores de ese array.
