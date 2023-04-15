@@ -60,15 +60,15 @@ for (let i = 0; i < pizzas.length; i++) {
 
 //b) Responder: ¿Hay alguna pizza que valga menos de $600?
 
-let pizzaMenor600 = false;
+let resultado = false;
 
 for (let i = 0; i < pizzas.length; i++) {
   if (pizzas[i].precio < 600) {
-    pizzaMenor600 = true;
+    resultado = true;
   }
 }
 
-if (pizzaMenor600) {
+if (resultado) {
   console.log(`Hay pizzas que valen menos de $600.`);
 } else {
   console.log(`No hay pizzas que valgan menos de $600`);
@@ -76,4 +76,14 @@ if (pizzaMenor600) {
 
 //c) El nombre de cada pizza con su respectivo precio.
 
+for (let i = 0; i < pizzas.length; i++) {
+  console.log(`${pizzas[i].nombre}: precio $${pizzas[i].precio}`);
+}
+
 //d) Todos los ingredientes de cada pizza (En cada iteración imprimir los ingredientes de la pizza que se esta recorriendo). Ayuda: van a tener que realizar dos recorridos, ya que cada pizza del array de pizzas tiene una propiedad "ingredientes" cuyo valor es un array con ingredientes.
+
+for (let i = 0; i < pizzas.length; i++) {
+  console.log(
+    `Ingredientes de la ${pizzas[i].nombre}: ${pizzas[i].ingredientes}`
+  );
+}
