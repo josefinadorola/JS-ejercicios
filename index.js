@@ -50,25 +50,21 @@ const pizzas = [
 
 //a)  Las pizzas que tengan un id impar.
 
-console.log(`Los siguientes pizzas tienen ID impares:`);
+const idImpar = pizzas.filter((pizzas) => {
+  return pizzas.id % 2 != 0;
+});
 
-for (let i = 0; i < pizzas.length; i++) {
-  if (pizzas[i].id % 2 != 0) {
-    console.log(pizzas[i].id);
-  }
-}
+idImpar.forEach((pizzas) => {
+  console.log(`La pizza n°${pizzas.id} tiene id impar`);
+});
 
 //b) Responder: ¿Hay alguna pizza que valga menos de $600?
 
-let resultado = false;
+const menosDe600 = pizzas.some((pizzas) => {
+  return pizzas.precio < 600;
+});
 
-for (let i = 0; i < pizzas.length; i++) {
-  if (pizzas[i].precio < 600) {
-    resultado = true;
-  }
-}
-
-if (resultado) {
+if (menosDe600 == true) {
   console.log(`Hay pizzas que valen menos de $600.`);
 } else {
   console.log(`No hay pizzas que valgan menos de $600`);
