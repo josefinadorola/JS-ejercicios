@@ -72,14 +72,12 @@ if (menosDe600 == true) {
 
 //c) El nombre de cada pizza con su respectivo precio.
 
-for (let i = 0; i < pizzas.length; i++) {
-  console.log(`${pizzas[i].nombre}: precio $${pizzas[i].precio}`);
-}
+pizzas.forEach((pizzas) => {
+  console.log(`La ${pizzas.nombre} tiene un valor de ${pizzas.precio}`);
+});
 
 //d) Todos los ingredientes de cada pizza (En cada iteración imprimir los ingredientes de la pizza que se esta recorriendo). Ayuda: van a tener que realizar dos recorridos, ya que cada pizza del array de pizzas tiene una propiedad "ingredientes" cuyo valor es un array con ingredientes.
 
-for (let i = 0; i < pizzas.length; i++) {
-  console.log(
-    `Ingredientes de la ${pizzas[i].nombre}: ${pizzas[i].ingredientes}`
-  );
-}
+pizzas.forEach((pizzas) => {
+  console.log(`Ingredientes de la ${pizzas.nombre}: ${pizzas.ingredientes}`);
+});
