@@ -45,3 +45,38 @@ const pizzas = [
     imagen: "./img/anana.png",
   },
 ];
+
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const resultado = document.getElementById("resultado");
+
+let itemsARenderizar = [];
+
+const renderItems = () => {
+  resultado.innerHTML = itemsARenderizar.map((item) => {
+    return `
+    <p> ${item} </p>
+    <img src="${pizzas.imagen}" alt="${pizza.nombre}">
+    <p>Precio: $${pizzas.precio}</p>
+  `;
+  });
+  resultado.innerHTML = "";
+};
+
+const submitHandle = (e) => {
+  e.preventDefault();
+
+  let itemNuevo = input.value;
+
+  itemsARenderizar = [...itemsARenderizar, itemNuevo];
+
+  input.value = "";
+
+  renderItems();
+};
+
+const init = () => {
+  form.addEventListener("submit", submitHandle);
+};
+
+init();
